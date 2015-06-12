@@ -1,0 +1,19 @@
+{
+  "name": "Reddit Pruner",
+  "description": "Pruning the puns and inside jokes of Reddit.",
+  "version": "0.1",
+  "manifest_version": 2,
+  "permissions": ["tabs"],
+  "background": {
+      "scripts": ["background.js"]
+  
+  },
+  "icons": { "16": "calculator-16.png", "128": "calculator-128.png" },
+  "browser_action":{
+  	"default_icon":{"16": "calculator-16.png",           // optional
+            "128": "calculator-128.png"           // optional
+          },
+    "default_title": "Reddit Pruner",      // optional; shown in tooltip
+    "default_popup": "window.html"        // optional
+  }
+}
