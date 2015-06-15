@@ -14,6 +14,6 @@
 	}	
 */
 
-innerHTML = "HEELO WORLD";
+innerHTML = "HELLO WORLD";
 //document.getElementById("").innerHTML;
 console.log(innerHTML);
