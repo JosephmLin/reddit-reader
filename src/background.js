@@ -1,3 +1,9 @@
+$(document).ready(function(){
+	$('body').on('click', 'a', function(){
+		chrome.tabs.create({url: $(this).attr('href')});
+		return false;
+	});
+});
 /*chrome.app.runtime.onLaunched.addListener(function() {
   chrome.app.window.create('window.html', {
     'bounds': {

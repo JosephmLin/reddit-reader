@@ -1,8 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
+  	<link rel="stylesheet" type="text/css" href="window.css">
+  	<script>
+			$(document).ready(function(){
+				$('body').on('click', 'a', function(){
+					chrome.tabs.create({url: $(this).attr('href')});
+					return false;
+				});
+			});
+  	</script>
+  	<meta charset="utf-8">
+  	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  	<link rel="stylesheet" href="/resources/demos/style.css">
+  	<script>
+  	$(function() {
+	    $( "#slider" ).slider();
+		});
+  	</script>
   </head>
   <body>
-    <div>Hello, world!</div>
+    <div><font size="2">Thank you for using Reddit Pruner!</font></div></br>
+    <div><font size="2">Thanks to your support, we can continue to prune Reddit.</font></div>
+    <div><font size="4"><a href="settings.html" target="_blank">Settings</a></font></div>
+    <a href="slider.html" target=_"blank">SLIDER</div>
   </body>
 </html>

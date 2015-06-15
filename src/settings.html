@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Reddit Pruner Settings</title>
+		<link rel="stylesheet" type="text/css" href="window.css">
+		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+		<script>
+		  $(function() {
+		    $( "#slider" ).slider();
+		  });
+  	</script>
+  </head>
+  <body>
+  	<form action="" methods="POST">
+	  <div><font size="2">Block Puns? </br> 
+			<input type="radio" name="block_puns" value="Yes">Yes<br>
+			<input type="radio" name="block_puns" value="No">No
+	  </div>
+	  <div><font size="2">Block Inside Jokes?</br>
+			<input type="radio" name="block_jokes" value="Yes">Yes<br>
+			<input type="radio" name="block_jokes" value="No">No
+	  </div>
+	  <input type="submit" value="Save"></input>
+		</form>
+	</body>
