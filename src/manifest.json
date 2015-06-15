@@ -5,7 +5,10 @@
   "manifest_version": 2,
   "permissions": ["tabs"],
   "background": {
-      "scripts": ["http://code.jquery.com/jquery-2.1.4.js", "background.js"]
+      "scripts": ["slider/slider.js", 
+                  "jquery/jquery-1.10.2.js", 
+                  "jquery/jquery-ui.js",
+                  "background.js"]
   
   },
   "icons": { "16": "calculator-16.png", "128": "calculator-128.png" },
@@ -19,16 +22,15 @@
   "content_scripts":[
     {
       "matches":["http://www.reddit.com/*"],
-      "css":["slider/jquery-ui.css"],   
-      "js":["pruneCommentTree.js",
-            "slider/slider.js", 
-            "slider/jquery-1.10.2.js", 
-            "slider/jquery-ui.js",
-            "http://code.jquery.com/jquery-2.1.4.js"]
+      "css":["jquery/jquery-ui.css"],   
+      "js":["jquery/jquery-1.10.2.js",
+            "jquery/jquery-ui.js",
+            "pruneCommentTree.js"]
     }
   ],
   "options_page":"settings.html",
   "permissions": [
     "tabs"
-  ]
+  ],
+  "web_accessible_resources":["jquery/jquery-1.10.2.js", "jquery/jquery-ui.js"]
 }

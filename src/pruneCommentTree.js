@@ -13,7 +13,24 @@
 		r?n.text("[–]"):n.text("[+]")
 	}	
 */
-
-innerHTML = "HELLO WORLD";
-//document.getElementById("").innerHTML;
-console.log(innerHTML);
+var jqueryscript = document.createElement('script');
+jqueryscript.src = 'chrome-extension://ncekfpnhcgoammpphcnbbcpfmpdpeoca/jquery/jquery-1.10.2.js';
+jqueryscript.type = 'text/javascript';
+var head=document.getElementsByTagName('head')[0];
+head.appendChild(jqueryscript);
+var jqueryuiscript = document.createElement('script');
+jqueryuiscript.src = 'chrome-extension://ncekfpnhcgoammpphcnbbcpfmpdpeoca/jquery/jquery-ui.js';
+jqueryuiscript.type = 'text/javascript';
+var head=document.getElementsByTagName('head')[0];
+head.appendChild(jqueryuiscript);
+/*chrome.tabs.executeScript( null, {code:"var x = 10; x"},
+   function(results){ console.log(results); } );*/
+jQuery(document).ready(function ($) {
+	
+	/*document.getElementsByClassName('.arrow down login-required').addEventListener('change_downvote', function()
+		{
+		});*/
+	$('.arrow down login-required .click').on('click', function(){
+		$(this).hide();
+	});
+});
