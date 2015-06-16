@@ -13,24 +13,22 @@
 		r?n.text("[–]"):n.text("[+]")
 	}	
 */
-var jqueryscript = document.createElement('script');
-jqueryscript.src = 'chrome-extension://ncekfpnhcgoammpphcnbbcpfmpdpeoca/jquery/jquery-1.10.2.js';
-jqueryscript.type = 'text/javascript';
-var head=document.getElementsByTagName('head')[0];
-head.appendChild(jqueryscript);
-var jqueryuiscript = document.createElement('script');
-jqueryuiscript.src = 'chrome-extension://ncekfpnhcgoammpphcnbbcpfmpdpeoca/jquery/jquery-ui.js';
-jqueryuiscript.type = 'text/javascript';
-var head=document.getElementsByTagName('head')[0];
-head.appendChild(jqueryuiscript);
-/*chrome.tabs.executeScript( null, {code:"var x = 10; x"},
-   function(results){ console.log(results); } );*/
-jQuery(document).ready(function ($) {
-	
-	/*document.getElementsByClassName('.arrow down login-required').addEventListener('change_downvote', function()
-		{
-		});*/
-	$('.arrow down login-required .click').on('click', function(){
-		$(this).hide();
-	});
+console.log("hidden");
+console.log("tagline should be hidden");
+//$(".expand").hide();
+hideClass = function(className)
+{
+	console.log("hideClass called to hide " + className);
+	var elements = document.getElementsByClassName(className);
+	for (var i = 0, length = elements.length; i< length; i++)
+	{
+		elements[i].style.display='none';
+	}
+}
+$(document).ready(function ($) {
+	hideClass('arrow up login-required');
+	hideClass('arrow login-required up');
+	hideClass('arrow down login-required');
+	hideClass('arrow login-required down');
+	hideClass('arrow login-required downmod');
 });
