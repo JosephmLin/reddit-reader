@@ -16,19 +16,47 @@
 console.log("hidden");
 console.log("tagline should be hidden");
 
-collapseGrandParent = function(element)
+collapseCurrentDownVote = function(element)
 {
+	var classname = element.attr('class');
+	//console.log("collapseGrandParent called " + element)
+	
+	var name_of_grandparent = element.parent().parent().attr('class');
+	if (name_of_grandparent.indexOf("reddit-link") < 0)
+	{
+		if(classname.indexOf('downmod') > -1)
+		{
+			var new_name = name_of_grandparent.replace("noncollapsed", "collapsed");
+			element.parent().parent().attr('class', new_name);
+		}
+	}
+	//Will need to parse through the name of the grandparent to get the unique ID for this class.
+	/*
+	We only care if the name_of_grandparent has the word "thing" in it
+	*/
+}
+eventListenerCollapse = function(element)
+{
+	var classname = element.attr('class');
 	//console.log("collapseGrandParent called " + element)
 	var name_of_grandparent = element.parent().parent().attr('class');
+	console.log("ELEMENT ATTR:");
+	console.log(element);
+	console.log("GP NAME:")
 	console.log(name_of_grandparent);
-	//Will need to parse through the name of the grandparent to get the unique ID for this class.
-}
-addEventListenersToElement = function(element)
-{
-	//element.click(function()
+	if (name_of_grandparent.indexOf("reddit-link") < 0)
 	{
-		collapseGrandParent($(element));
+		if(classname.indexOf('downmod') > -1)
+		{
+			var new_name = name_of_grandparent.replace("noncollapsed", "collapsed");
+			element.parent().parent().attr('class', new_name);
+			//Add an "innerHTML" which calls the popup box.
+		}
 	}
+	//Will need to parse through the name of the grandparent to get the unique ID for this class.
+	/*
+	We only care if the name_of_grandparent has the word "thing" in it
+	*/
 }
 changeDownvoteClass = function(className)
 {
@@ -38,18 +66,12 @@ changeDownvoteClass = function(className)
 		var elements = document.getElementsByClassName(className[iter]);
 		for (var i = 0, length = elements.length; i< length; i++)
 		{
-			if(elements[i] == undefined)
-			{
-				console.log(i)
-				console.log("ELEMENTS BEFORE AND AFTER UNDEFINED.");
-				console.log(elements[i-1]);
-				console.log(elements[i]);
-				console.log(elements[i+10]);
-			}
-			else
-			{
-				addEventListenersToElement(elements[i]);
-			}
+				collapseCurrentDownVote($(elements[i]));
+				elements[i].addEventListener("click", function()
+				{
+					console.log(elements[i]);
+					eventListenerCollapse($(elements[i]));
+				});
 		}
 	}
 	console.log("hideclass complete");

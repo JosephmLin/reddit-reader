@@ -1,7 +1,7 @@
 {
   "name": "Reddit Pruner",
   "description": "Pruning the puns and inside jokes of Reddit.",
-  "version": "0.1",
+  "version": "0.2",
   "manifest_version": 2,
   "permissions": ["tabs"],
   "background": {
