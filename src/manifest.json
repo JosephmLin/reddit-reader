@@ -25,7 +25,8 @@
       "css":["jquery/jquery-ui.css"],   
       "js":["jquery/jquery-1.10.2.js",
             "jquery/jquery-ui.js",
-            "pruneCommentTree.js"]
+            "pruneCommentTree.js"],
+      "run_at":"document_start"
     }
   ],
   "options_page":"settings.html",

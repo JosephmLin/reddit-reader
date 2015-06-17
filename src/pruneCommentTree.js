@@ -40,10 +40,6 @@ eventListenerCollapse = function(element)
 	var classname = element.attr('class');
 	//console.log("collapseGrandParent called " + element)
 	var name_of_grandparent = element.parent().parent().attr('class');
-	console.log("ELEMENT ATTR:");
-	console.log(element);
-	console.log("GP NAME:")
-	console.log(name_of_grandparent);
 	if (name_of_grandparent.indexOf("reddit-link") < 0)
 	{
 		if(classname.indexOf('downmod') > -1)
@@ -69,8 +65,7 @@ changeDownvoteClass = function(className)
 				collapseCurrentDownVote($(elements[i]));
 				elements[i].addEventListener("click", function()
 				{
-					console.log(elements[i]);
-					eventListenerCollapse($(elements[i]));
+					eventListenerCollapse($(this));
 				});
 		}
 	}
